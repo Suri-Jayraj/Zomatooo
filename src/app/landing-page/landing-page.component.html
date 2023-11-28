@@ -1,0 +1,204 @@
+<Header>
+  <div class="navbar">
+    <div class="logo">
+        <img src="https://b.zmtcdn.com/web_assets/8313a97515fcb0447d2d77c276532a511583262271.png" class="high-res-image" alt="Logo" role="presentation">
+    </div>
+  
+      <div class="search-bar">
+        <div class="location">
+            <i class="sc-rbbb40-1 iFnyeo" color="#FF7E8B" size="20"><svg xmlns="http://www.w3.org/2000/svg" fill="#FF7E8B" width="20" height="20" viewBox="0 0 20 20" aria-labelledby="icon-svg-title- icon-svg-desc-" role="img" class="sc-rbbb40-0 iRDDBk"><title>location-fill</title><path d="M10.2 0.42c-4.5 0-8.2 3.7-8.2 8.3 0 6.2 7.5 11.3 7.8 11.6 0.2 0.1 0.3 0.1 0.4 0.1s0.3 0 0.4-0.1c0.3-0.2 7.8-5.3 7.8-11.6 0.1-4.6-3.6-8.3-8.2-8.3zM10.2 11.42c-1.7 0-3-1.3-3-3s1.3-3 3-3c1.7 0 3 1.3 3 3s-1.3 3-3 3z"></path></svg></i>
+            <input placeholder="Hyderabad" class="sc-bYzVrU ewRgDY" value="">
+            <i class="fa-solid fa-angle-down"></i>
+        </div>
+        <input placeholder="Search for restaurant, cuisine or a dish" class="" value="">        <i class="fa fa-search search-icon"></i>
+      </div>
+    <div class="nav-item">
+      <span class="nav-icon">🛒</span>
+      <span>Cart</span>
+    </div>
+    <div class="nav-item">
+      <span class="nav-icon">🎁</span>
+      <span>Offers</span>
+    </div>
+    <div class="nav-item">
+      <span class="nav-icon">💖</span>
+      <span>Wishlist</span>
+    </div>
+    <div class="nav-item">
+      <span class="nav-icon">👤</span>
+      <span>Profile</span>
+    </div>
+  </div>
+</Header>
+<body>
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="assets/food blue.png" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="assets/Banner 1.png" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="assets/Biryani.png" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- ---categories Name ------->
+    <!-- <div class="textmover">
+      <div class="fixedtext">
+        <h1>Choose Your favourite categories!!!</h1>
+      </div>
+      <div class="changetext">
+        <div  >
+          <span *ngFor="let text of textElements" [style.opacity]="text.opacity">{{text.text}}</span>
+        </div>
+      </div>
+    </div>
+     -->
+
+     <h1>
+      <span>Choose Your favourite categories!!!</span>
+      <div class="message">
+        <div class="Animi-text"  *ngFor="let text of textElements">{{text.text}}</div>
+      </div>
+    </h1>
+
+
+    <br>
+
+    <br>
+    
+
+      <!-- scroll bar -->
+      <div class="scrollable-container">
+        <div class="scrollable-content" #scrollableContent>
+              <div class="images">
+                <div class="item"><img src="assets\Biryanipng.png" alt="Biryani">
+                  <p>Biryani</p>
+                </div>
+                <div class="item"><img src="assets/chicken.png" alt="chicken">
+                  <p>chicken</p>
+                </div>
+                <div class="item"><img src="assets/northind cusine.png" alt="">
+                  <p>NorthInd-thali</p>
+                </div>
+                <div class="item"><img src="assets/icecream.png" alt="">
+                  <p>IceCream</p>
+                </div>
+                <div class="item"><img src="assets/southind thali.png" alt="">
+                  <p>SouthInd-thali</p>
+                </div>
+                <div class="item"><img src="assets/shakes.png" alt="">
+                  <p>Shakes</p>
+                </div>
+                <div class="item"><img src="assets/sandwich.png" alt="">
+                  <p>Sanwiches</p>
+                </div>
+                <div class="item"><img src="assets/rolls.png" alt="">
+                  <p>Rolls</p>
+                </div>
+                <div class="item"><img src="assets/cooldrinks.png" alt="">
+                  <p>Bevarages</p>
+                </div>
+                <div class="item"><img src="assets/noodles.png" alt="">
+                  <p>Noodles</p>
+                </div>
+                <div class="item"><img src="assets/Biryanii.png" alt="">
+                  <p>Biryami</p>
+                </div>
+              </div>
+        </div>
+      </div>
+
+      <!-- ---- Cards -----  -->
+      <h1 style="background-color: chartreuse;">Best Offers For You</h1>
+      <!-- your-component.component.html -->
+        <!-- your-component.component.html -->
+<div class="offer-cards">
+  <div class="images-container" #imagesContainer>
+    <a href=""><img src="assets/Mask group.png" alt=""></a>
+    <a href=""><img src="assets/McD.png" alt=""></a>
+    <a href=""><img src="assets/Noodle.png" alt=""></a>
+    <a href=""><img src="assets/pepsi.png" alt=""></a>
+    <a href=""><img src="assets/pizzahut.png" alt=""></a>
+    <a href=""><img src="assets/Cake.png" alt=""></a>
+  </div>
+  <button class="scroll-button left" (click)="scrollLeft()">&lt;</button>
+<button class="scroll-button right" (click)="scrollRight()">&gt;</button>
+</div>
+
+<h1>Restaurant</h1>
+<!-- ---- restaurant card ----- -->
+<div class="restaurant-cards">
+  <div class="food-card" *ngFor="let restaurant of restaurants">
+    <img class="restaurant-image" [src]="restaurant.imageSource" alt="Restaurant Image">
+    <div class="restaurant-info">
+      <div class="restaurant-name">{{ restaurant.restaurantName }}</div>
+      <div class="star-rating">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+      <div class="food-item">{{ restaurant.foodItem }}</div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h5>About Us</h5>
+        <p>Your text here...</p>
+      </div>
+      <div class="col-md-4">
+        <h5>Contact Us</h5>
+        <ul>
+          <li>Phone: +1 (123) 456-7890</li>
+          <li>Email: info@example.com</li>
+          <li>Address: 123 Main St, Anytown, USA</li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h5>Social Media</h5>
+        <ul>
+          <li>
+            <a href="#">
+              <i class="fab fa-facebook-f"></i>
+              Facebook
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fab fa-twitter"></i>
+              Twitter
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fab fa-instagram"></i>
+              Instagram
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+</body>
