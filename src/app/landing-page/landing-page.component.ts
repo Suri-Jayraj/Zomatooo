@@ -82,7 +82,9 @@ export class LandingPageComponent {
   //   'assets\Cake.png',
   //   'assets\Mask group.png'
   // ];
- 
+  ngOnInit(): void {
+    console.log('Redirected to Landing page after authentication');
+  }
 }
 
 

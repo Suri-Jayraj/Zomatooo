@@ -29,21 +29,21 @@ import { GoogleLoginProvider } from 'angularx-social-login';
     SocialLoginModule
 
   ],
-  providers: [
-    {
-      provide: 'SocialAuthServiceConfig',
-      useValue: {
-        autoLogin: false,
-        providers: [
-          {
-            id: GoogleLoginProvider.PROVIDER_ID,
-            provider: new GoogleLoginProvider('1016816198866-9cifad087c95mfkv9an62looe6a95a1o.apps.googleusercontent.com'),
-          },
-          // Add other providers if needed
-        ],
-      } as SocialAuthServiceConfig,
-    },
-  ],
+  // providers: [
+  //   {
+  //     provide: 'SocialAuthServiceConfig',
+  //     useValue: {
+  //       autoLogin: false,
+  //       providers: [
+  //         {
+  //           id: GoogleLoginProvider.PROVIDER_ID,
+  //           provider: new GoogleLoginProvider('1016816198866-9cifad087c95mfkv9an62looe6a95a1o.apps.googleusercontent.com'),
+  //         },
+  //         // Add other providers if needed
+  //       ],
+  //     } as SocialAuthServiceConfig,
+  //   },
+  // ],
   bootstrap: [AppComponent]
 })
 export class AppModule { 

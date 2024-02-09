@@ -24,9 +24,9 @@ const routes: Routes = [
     component:CreateOrderComponent
   },
   {
-    path:'Landing',
-    component:LandingPageComponent
+    path: 'Landing', component: LandingPageComponent
   }
+ 
  
 ];
 
