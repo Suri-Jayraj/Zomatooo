@@ -5,19 +5,17 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
+// import { LoginComponent } from './login/login.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { RestuarantItemsComponent } from './restuarant-items/restuarant-items.component';
 import { CreateOrderComponent } from './create-order/create-order.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
-import { SocialAuthService, SocialAuthServiceConfig, SocialLoginModule } from 'angularx-social-login';
-import { GoogleLoginProvider } from 'angularx-social-login';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
+    // LoginComponent,
     CategoriesComponent,
     RestuarantItemsComponent,
     CreateOrderComponent,
@@ -26,7 +24,7 @@ import { GoogleLoginProvider } from 'angularx-social-login';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SocialLoginModule
+    
 
   ],
   // providers: [

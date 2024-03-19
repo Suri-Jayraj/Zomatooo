@@ -1,20 +1,35 @@
-<div id="g_id_onload"
+
+<!-- <button id="g_id_signin">Sign In with Google</button> -->
+<!-- <div id="g_id_signin"></div> -->
+<!-- <button id="Gsingin" style="display:none;">Sign In with Google</button> -->
+
+<!-- <div id="g_id_onload"
      data-client_id="1016816198866-9cifad087c95mfkv9an62looe6a95a1o.apps.googleusercontent.com"
-     data-context="signin"
-     data-ux_mode="popup"
+     data-callback="handleCredentialResponse"
+     data-auto_prompt="false">
      data-login_uri="http://localhost:4200/Landing" 
-     data-auto_prompt="false"
-     data-itp_support="true"
-     >
+
 </div>
-
-
-
 <div class="g_id_signin"
      data-type="standard"
-     data-shape="pill"
+     data-shape="rectangular"
      data-theme="outline"
-     data-text="signin_with"
+     data-text="sign_in_with"
      data-size="large"
-     data-logo_alignment="center">
-</div>
+     data-logo_alignment="left">
+</div> -->
+
+<form class="form">
+     <span class="heading">Sign In</span>
+   
+     <span class="Mail">E-Mail</span>
+     <input placeholder="Enter E-Mail" type="text" class="input" />
+     <span class="Password">Password</span>
+     <input placeholder="Enter Password" type="text" class="input" />
+     <span class="forgot"><a href="">forgot password?</a></span>
+     <button>Submit</button>
+     <button id="g_id_signin"></button>
+</form>
+   
+
+  
