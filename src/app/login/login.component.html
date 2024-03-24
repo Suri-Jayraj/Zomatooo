@@ -18,18 +18,37 @@
      data-size="large"
      data-logo_alignment="left">
 </div> -->
+<body style="background-image: url('assets/pexel-background.jpg');width:100%;">
+     <div class="forum">
+          <form class="form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+               <span class="heading">Sign In</span>
+               
+               <label for="emailInput" class="Mail">E-Mail</label>
+               <input id="email" formControlName="Email" type="email" placeholder="Email"> 
+               
+               <label for="passwordInput" class="Password">Password</label>
+               <input id="password" formControlName="Password" type="password" placeholder="Password">
+               
+               <span class="forgot"><a href="">forgot password?</a></span>
+               
+               <button class="button-confirm" type="submit" [disabled]="!loginForm.valid">Submit</button>
 
-<form class="form">
-     <span class="heading">Sign In</span>
-   
-     <span class="Mail">E-Mail</span>
-     <input placeholder="Enter E-Mail" type="text" class="input" />
-     <span class="Password">Password</span>
-     <input placeholder="Enter Password" type="text" class="input" />
-     <span class="forgot"><a href="">forgot password?</a></span>
-     <button>Submit</button>
-     <button id="g_id_signin"></button>
-</form>
+               <button id="g_id_signin"></button>
+             </form>
+             
+     </div>
+</body>
+
+
+ 
+
+
+
+
+
+
+
+
    
 
   

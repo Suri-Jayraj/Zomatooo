@@ -5,10 +5,15 @@ import { CategoriesComponent } from './categories/categories.component';
 import { RestuarantItemsComponent } from './restuarant-items/restuarant-items.component';
 import { CreateOrderComponent } from './create-order/create-order.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { SignupComponent } from './signup/signup.component';
 
 const routes: Routes = [
   {
     path:'',
+    component:LoginComponent
+  },
+  {
+    path:'login',
     component:LoginComponent
   },
   {
@@ -25,7 +30,11 @@ const routes: Routes = [
   },
   {
     path: 'Landing', component: LandingPageComponent
+  },
+  {
+    path: 'Signup', component: SignupComponent
   }
+
  
  
 ];

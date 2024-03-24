@@ -1,12 +1,12 @@
 .login-container {
-    max-width: 300px;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
+  max-width: 300px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
 /*   
   button {
     background-color: #4285f4;
@@ -18,85 +18,89 @@
     border-radius: 3px;
     margin-top: 10px;
   } */
-  
-  /* button:hover {
+
+/* button:hover {
     background-color: #2a5db0;
   } */
-  
 
+.forum {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 70px;
+}
 
-  .form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    background-color: rgb(241, 241, 130);
-    padding: 60px;
-    padding-inline: 28px;
-    border-radius: 20px;
-    box-shadow: 4px 4px rgb(0, 2, 65);
-    font-family: cursive;
-    width: fit-content;
-  }
-  
-  .heading {
-    font-size: 25px;
-    text-align: center;
-    font-weight: 600;
-    font-family: cursive;
-  }
-  
-  .form button {
-    /* align-self: flex-end; */
-    padding: 10px;
-    border-radius: 10px;
-    margin-top: 20px;
-    background-color: rgb(241, 241, 130);
-    box-shadow: 2px 3px rgb(0, 2, 65);
-  
-    color: rgb(0, 0, 0);
-    font-size: medium;
-    font-weight: 600;
-    transition: 400ms;
-    font-family: cursive;
-  }
-  
-  .form button:hover {
-    background-color: rgb(235, 255, 59);
-    transition: 400ms;
-    cursor: pointer;
-  }
-  
-  .input {
-    padding: 10px;
-    width: 280px;
-    border-radius: 10px;
-    border-style: double;
-    border-color: black;
-    font-size: 15px;
-    box-shadow: 2px 3px rgb(0, 2, 65);
-  
-    font-family: cursive;
-  }
-  
-  .forgot,
-  a {
-    padding-top: 10px;
-    /* font-weight: 600; */
-    color: rgba(0, 0, 0, 0.994);
-    font-family: cursive;
-    text-decoration: none;
-    transition: 400ms;
-  }
-  .forgot,
-  a:hover {
-    color: rgba(0, 0, 0, 0.703);
-    transition: 400ms;
-  }
-  
-  .Mail,
-  .Password {
-    font-size: 16px;
-    /* font-weight: 600; */
-    font-family: cursive;
-  }
-  
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: rgb(241, 241, 130);
+  padding: 60px;
+  padding-inline: 28px;
+  border-radius: 20px;
+  box-shadow: 4px 4px rgb(0, 2, 65);
+  font-family: cursive;
+  width: fit-content;
+}
+
+.heading {
+  font-size: 25px;
+  text-align: center;
+  font-weight: 600;
+  font-family: cursive;
+}
+
+.form button {
+  /* align-self: flex-end; */
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 20px;
+  background-color: rgb(241, 241, 130);
+  box-shadow: 2px 3px rgb(0, 2, 65);
+
+  color: rgb(0, 0, 0);
+  font-size: medium;
+  font-weight: 600;
+  transition: 400ms;
+  font-family: cursive;
+}
+
+.form button:hover {
+  background-color: rgb(235, 255, 59);
+  transition: 400ms;
+  cursor: pointer;
+}
+
+.input {
+  padding: 10px;
+  width: 280px;
+  border-radius: 10px;
+  border-style: double;
+  border-color: black;
+  font-size: 15px;
+  box-shadow: 2px 3px rgb(0, 2, 65);
+
+  font-family: cursive;
+}
+
+.forgot,
+a {
+  padding-top: 10px;
+  /* font-weight: 600; */
+  color: rgba(0, 0, 0, 0.994);
+  font-family: cursive;
+  text-decoration: none;
+  transition: 400ms;
+}
+.forgot,
+a:hover {
+  color: rgba(0, 0, 0, 0.703);
+  transition: 400ms;
+}
+
+.Mail,
+.Password {
+  font-size: 16px;
+  /* font-weight: 600; */
+  font-family: cursive;
+}

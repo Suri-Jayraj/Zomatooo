@@ -1,0 +1,67 @@
+<!-- <form class="form">
+    <div class="title">Welcome,<br><span>sign up to continue</span></div>
+    <input class="input" name="Name" placeholder="Name" type="Name">
+    <input class="input" name="email" placeholder="Email" type="email">
+    <input class="input" name="Phone No" placeholder="Phone No" type="Phone No">
+    <input class="input" name="Address" placeholder="Address" type="Address">
+    <input class="input" name="" placeholder="Password" type="password">
+
+
+    
+    <button class="button-confirm">Let`s go →</button>
+  </form> -->
+
+
+
+  <!-- <form class="form" [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <input formControlName="name" placeholder="Name" required>
+    <input formControlName="email" type="email" placeholder="Email" required>
+    <input formControlName="phone" placeholder="Phone">
+    <input formControlName="address" placeholder="Address" required>
+    <input formControlName="password_Hash" type="password" placeholder="Password" required>
+    <button class="button-confirm" type="submit" [disabled]="!userForm.valid">Let`s go →</button>
+
+  </form> -->
+  
+
+
+   <form class="form" [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <label for="name">Name</label>
+    <input id="name" formControlName="name" placeholder="Name">
+    
+    <label for="email">Email</label>
+    <input id="email" formControlName="email" type="email" placeholder="Email">
+    
+    <label for="phone">Phone</label>
+    <input id="phone" formControlName="phone" placeholder="Phone">
+    
+    <label for="address">Address</label>
+    <input id="address" formControlName="address" placeholder="Address">
+    
+    <label for="password">Password</label>
+    <input id="password" formControlName="Password" type="password" placeholder="Password">
+    
+    <button class="button-confirm" type="submit" [disabled]="!userForm.valid">Let's go →</button>
+  </form>
+
+
+  
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Address</th>
+
+    </tr>
+    <tr *ngFor="let item of data">
+      <td>{{ item.id }}</td>
+      <td>{{ item.name }}</td>
+      <td>{{ item.email }}</td>
+      <td>{{ item.phone }}</td>
+      <td>{{ item.address}}</td>
+
+    </tr>
+  </table>
+  
