@@ -1,1 +1,39 @@
-<p>create-order works!</p>
+<input type="text" placeholder="Search by all columns..." (input)="applyFilter($event)">
+<table *ngIf="filteredData.length; else noData">
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Cuisine</th>
+    <th>Location</th>
+  </tr>
+  <tr *ngFor="let item of filteredData">
+    <td>{{ item.userId }}</td>
+    <td>{{ item.name }}</td>
+    <td>{{ item.email }}</td>
+    <td>{{ item.phone }}</td>
+  </tr>
+</table>
+<ng-template #noData><p>No data available.</p></ng-template>
+
+
+
+ <!-- <table *ngIf="filteredData.length; else noData">
+  <thead>
+    <tr>
+      <th>ID <input type="text" placeholder="Filter ID..." (input)="applyColumnFilter($event, 'userId')"></th>
+      <th>Name <input type="text" placeholder="Filter Name..." (input)="applyColumnFilter($event, 'name')"></th>
+      <th>Email <input type="text" placeholder="Filter Email..." (input)="applyColumnFilter($event, 'email')"></th>
+      <th>Phone <input type="text" placeholder="Filter Phone..." (input)="applyColumnFilter($event, 'phone')"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of filteredData">
+      <td>{{ item.userId }}</td>
+      <td>{{ item.name }}</td>
+      <td>{{ item.email }}</td>
+      <td>{{ item.phone }}</td>
+    </tr>
+  </tbody>
+</table>
+<ng-template #noData><p>No data available.</p></ng-template> -->
+

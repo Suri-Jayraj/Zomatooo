@@ -6,6 +6,10 @@ import { RestuarantItemsComponent } from './restuarant-items/restuarant-items.co
 import { CreateOrderComponent } from './create-order/create-order.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { SignupComponent } from './signup/signup.component';
+import {AdminaddrestComponent} from './adminaddrest/adminaddrest.component'
+import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { authGuard } from './auth.guard';
 
 const routes: Routes = [
   {
@@ -18,23 +22,36 @@ const routes: Routes = [
   },
   {
     path:'Foodcategory',
-    component:CategoriesComponent
+    component:CategoriesComponent,canActivate: [authGuard]
   },
   {
     path:'Restuarant-items',
-    component:RestuarantItemsComponent
+    component:RestuarantItemsComponent,canActivate: [authGuard]
   },
   {
     path:'Create-Order',
-    component:CreateOrderComponent
+    component:CreateOrderComponent,canActivate: [authGuard]
   },
   {
-    path: 'Landing', component: LandingPageComponent
+    path: 'Landing', component: LandingPageComponent, canActivate: [authGuard]
   },
   {
     path: 'Signup', component: SignupComponent
-  }
-
+  },
+  {
+    path: 'app-create-order', component:CreateOrderComponent,canActivate: [authGuard]
+  },
+  {
+    path: 'AdminAddrest', component:AdminaddrestComponent,canActivate: [authGuard]
+  },
+  {
+    path:'AdminDashboard',
+    component:AdmindashboardComponent ,canActivate: [authGuard]
+  },
+  {
+    path:'ResetPassword',
+    component:ResetPasswordComponent 
+  },
  
  
 ];

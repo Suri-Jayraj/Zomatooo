@@ -104,3 +104,40 @@ a:hover {
   /* font-weight: 600; */
   font-family: cursive;
 }
+
+
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #0078d4; /* Microsoft blue */
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+button.loading {
+  cursor: not-allowed;
+}
+
+button:disabled {
+  background-color: #c7c7c7;
+  cursor: not-allowed;
+}
+
+img {
+  height: 20px;
+  margin-right: 8px;
+}
+
+
+
+/* // forgot password modal css  */
+
+/* Forgot Password Modal CSS */
+/* Forgot Password Modal CSS */

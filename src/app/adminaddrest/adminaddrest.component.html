@@ -1,0 +1,220 @@
+<!-- 
+
+<div class="container">
+    <h2>Add Restaurant</h2>
+    <form [formGroup]="restaurantForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" formControlName="name" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="cuisine">Cuisine</label>
+        <input type="text" id="cuisine" formControlName="cuisine" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="location">Location</label>
+        <input type="text" id="location" formControlName="location" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="rating">Rating</label>
+        <input type="number" id="rating" formControlName="rating" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input type="text" id="description" formControlName="description" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="imageUrl">Image URL</label>
+        <input type="text" id="imageUrl" formControlName="imageUrl" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="deliveryAreas">Delivery Areas</label>
+        <input type="text" id="deliveryAreas" formControlName="deliveryAreas" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="deliveryFee">Delivery Fee</label>
+        <input type="number" id="deliveryFee" formControlName="deliveryFee" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="minOrderAmount">Min Order Amount</label>
+        <input type="number" id="minOrderAmount" formControlName="minOrderAmount" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="operatingHours">Operating Hours</label>
+        <input type="text" id="operatingHours" formControlName="operatingHours" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="isActive">Is Active</label>
+        <input type="checkbox" id="isActive" formControlName="isActive" class="form-check-input" />
+      </div>
+      <button type="submit" class="btn btn-primary">Add Restaurant</button>
+    </form>
+  </div>
+   -->
+
+<div class="container">
+  <h1>Restaurant information</h1>
+
+  <div class="registration-container">
+    <div class="sidebar">
+      <ul>
+        <li class="completed">
+          <span class="icon">🍽️</span>
+          Restaurant information
+          <a href="#" class="edit-link">Edit details ></a>
+        </li>
+        <li class="active">
+          <span class="icon">📋</span>
+          Menu and operational details
+        </li>
+        <li>
+          <span class="icon">📄</span>
+          Restaurant documents
+        </li>
+        <li>
+          <span class="icon">📝</span>
+          Partner contract
+        </li>
+      </ul>
+      <div class="restaurant-id">Restaurant ID: 21348937</div>
+    </div>
+    <form [formGroup]="restaurantForm" (ngSubmit)="onSubmit()">
+      <div class="form-section">
+        <h2>Restaurant name</h2>
+        <p class="subtitle">Customers will see this name on Zomato</p>
+        <div class="form-group">
+          <label for="name">Restaurant name*</label>
+          <input
+            type="text"
+            id="name"
+            formControlName="name"
+            class="form-control"
+            placeholder="Jay's restaurant"
+          />
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h2>Owner details</h2>
+        <p class="subtitle">
+          Zomato will use these details for all business communications and
+          updates
+        </p>
+
+        <div class="form-group">
+          <label for="ownerName">Full name*</label>
+          <input
+            type="text"
+            id="ownerName"
+            formControlName="ownerName"
+            class="form-control"
+            placeholder="jay"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email address (optional)</label>
+          <input
+            type="email"
+            id="email"
+            formControlName="email"
+            class="form-control"
+          />
+        </div>
+
+        <div class="form-group phone-group">
+          <label for="phone">Phone number*</label>
+          <div class="phone-input">
+            <div class="country-code">
+              <img src="assets\flag.png" alt="" /><br />
+              <span>+91</span>
+            </div>
+            <input
+              type="tel"
+              id="phone"
+              formControlName="phone"
+              class="form-control"
+              placeholder="7989376195"
+            />
+          </div>
+          <p>Restaurant's primary contact number</p>
+          <p class="subtitle">
+            Customers, delivery partners and Zomato may call on this number for
+            order support
+          </p>
+        </div>
+      </div>
+
+      <div class="address-section">
+        <h2>Restaurant address details</h2>
+        <p class="subtitle">
+          Address details are basis the restaurant location mentioned above
+        </p>
+
+        <form>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="building">Shop no. / building no. (optional)</label>
+              <input
+                type="text"
+                id="building"
+                formControlName="building"
+                placeholder="near sbi bank"
+              />
+            </div>
+            <div class="form-group">
+              <label for="floor">Floor / tower (optional)</label>
+              <input
+                type="text"
+                id="floor"
+                formControlName="floor"
+                placeholder="Floor / tower (optional)"
+              />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="area">Area / Sector / Locality*</label>
+              <input
+                type="text"
+                id="area"
+                formControlName="area"
+                placeholder="22/91/2"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="city">City</label>
+              <input
+                type="text"
+                id="city"
+                formControlName="city"
+                placeholder="Visakhapatnam"
+              />
+            </div>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="landmark">Add any nearby landmark (optional)</label>
+            <input
+              type="text"
+              id="landmark"
+              formControlName="landmark"
+              placeholder="Add any nearby landmark (optional)"
+            />
+          </div>
+        </form>
+
+        <div class="info-box">
+          <p>
+            Please ensure that this address is the same as mentioned on your
+            FSSAI license
+          </p>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Next</button>
+    </form>
+  </div>
+</div>

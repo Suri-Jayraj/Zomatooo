@@ -1,4 +1,3 @@
-
 <!-- <button id="g_id_signin">Sign In with Google</button> -->
 <!-- <div id="g_id_signin"></div> -->
 <!-- <button id="Gsingin" style="display:none;">Sign In with Google</button> -->
@@ -18,37 +17,68 @@
      data-size="large"
      data-logo_alignment="left">
 </div> -->
-<body style="background-image: url('assets/pexel-background.jpg');width:100%;">
-     <div class="forum">
-          <form class="form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-               <span class="heading">Sign In</span>
-               
-               <label for="emailInput" class="Mail">E-Mail</label>
-               <input id="email" formControlName="Email" type="email" placeholder="Email"> 
-               
-               <label for="passwordInput" class="Password">Password</label>
-               <input id="password" formControlName="Password" type="password" placeholder="Password">
-               
-               <span class="forgot"><a href="">forgot password?</a></span>
-               
-               <button class="button-confirm" type="submit" [disabled]="!loginForm.valid">Submit</button>
 
-               <button id="g_id_signin"></button>
-             </form>
-             
-     </div>
+<body style="background-image: url('assets/pexel-background.jpg'); width: 100%">
+  <div class="forum">
+    <form class="form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <span class="heading">Sign In</span>
+
+      <label for="emailInput" class="Mail">E-Mail</label>
+      <input id="email" formControlName="Email" type="email" placeholder="Email" />
+
+      <label for="passwordInput" class="Password">Password</label>
+      <input id="password" formControlName="Password" type="password" placeholder="Password" />
+
+      <button class="button-confirm" type="submit" [disabled]="!loginForm.valid">
+        Submit
+      </button>
+
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Forgot Password
+      </button>
+
+      <button id="g_id_signin"></button>
+
+      <!-- Add Microsoft login button -->
+      <!-- <button (click)="loginWithMicrosoft()">Login with Microsoft</button> -->
+      <button [disabled]="isLoginInProgress" [ngClass]="{ loading: isLoginInProgress }" (click)="loginWithMicrosoft()">
+        <img *ngIf="!isLoginInProgress" src="assets/icons-microsoft.png" alt="Microsoft Icon" />
+        {{ isLoginInProgress ? "Logging in..." : "Login with Microsoft" }}
+      </button>
+    </form>
+  </div>
 </body>
 
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Forgot Password</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form [formGroup]="forgotPasswordForm" (ngSubmit)="onForgotPassword()">
+        <div class="modal-body">
+          <p>Please Enter email to get Reset-Password link</p>
+          <div class="form-group">
+            <input
+              id="email"
+              formControlName="email"
+              type="email"
+              class="form-control"
+              placeholder="Enter email"
+            />
+            <div *ngIf="forgotPasswordForm.get('email').invalid && (forgotPasswordForm.get('email').dirty || forgotPasswordForm.get('email').touched)" class="text-danger">
+              <div *ngIf="forgotPasswordForm.get('email').errors?.['required']">Email is required.</div>
+              <div *ngIf="forgotPasswordForm.get('email').errors?.['email']">Invalid email format.</div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary" [disabled]="forgotPasswordForm.invalid">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 
- 
-
-
-
-
-
-
-
-
-   
-
-  

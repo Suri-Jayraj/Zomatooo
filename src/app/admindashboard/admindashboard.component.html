@@ -1,0 +1,96 @@
+<header class="header">
+    <div class="logo">
+        <img src="https://www.zomato.com/partners/static/media/logo.db9895f0fbfcd5225463fe17abc4317d.svg" alt="Zomato Logo">
+        <!-- <span>restaurant partner</span> -->
+    </div>
+    <h1>Admin Dashboard</h1>
+    <div class="profile-container">
+        <div class="profile-summary" (click)="toggleDropdown()">
+          <img src="assets\Pudgy penguin.png" alt="User Avatar" class="avatar">
+          <span>Jay</span>
+          <span class="arrow">&#9662;</span>
+        </div>
+    </div> 
+</header>
+
+<body>
+    <div id="carouselExampleCaptions" class="carousel slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="assets/food blue.png" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>First slide label</h5>
+              <p>Some representative placeholder content for the first slide.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="assets/Banner 1.png" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Second slide label</h5>
+              <p>Some representative placeholder content for the second slide.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="assets/Biryani.png" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Third slide label</h5>
+              <p>Some representative placeholder content for the third slide.</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    <div class="container">
+        <section class="hero">
+            <h1>Partner with Zomato and grow your business</h1>
+            <p>0% commission for the 1st month for new restaurant partners</p>
+            <button class="register-button">Register your restaurant</button>
+        </section>
+        <section class="get-started">
+            <div class="get-started-text">
+                <h2>Get Started - It only takes 10 minutes</h2>
+                <p>Please be ready with the following for a smooth registration</p>
+                <ul>
+                    <li>✔️ PAN card</li>
+                    <li>✔️ GST number, if applicable <a href="#">Require a GST? Apply here</a></li>
+                    <li>✔️ Bank account details</li>
+                    <li>✔️ Menu details and one dish image</li>
+                    <li>✔️ FSSAI license <a href="#">Don't have a FSSAI license? Apply here</a></li>
+                </ul>
+            </div>
+            <div class="get-started-image">
+                <img src="assets/get-started.png" alt="Get Started Image">
+            </div>
+        </section>
+    </div>
+</body>
+
+<div class="dropdown" *ngIf="dropdownVisible">
+    <div class="card">
+      <img src="assets\Pudgy penguin.png" alt="User Avatar" class="avatar-large">
+      <div class="card-content">
+        <h3>Jay</h3>
+        <p>+91-8185905267</p>
+        <p>jayraj8185@gmail.com</p>
+        <a href="#">My Restaurants</a>
+        <button class="logout-button">Logout</button>
+      </div>
+      <div class="card-footer">
+        <a href="#">Terms of Service</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Code of Conduct</a>
+      </div>
+    </div>
+  </div>

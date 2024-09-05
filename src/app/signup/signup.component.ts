@@ -48,6 +48,7 @@ export class SignupComponent implements OnInit {
         next: (response) => {
           console.log('User created', response);
           this.toastr.success('successful Created!!'); // Display success notification
+          this.userForm.reset();
         },
         error: (error) => {
           console.error('Error creating user', error);

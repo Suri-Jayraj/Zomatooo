@@ -1,4 +1,8 @@
 import {  Component, ElementRef, ViewChild,Renderer2 } from '@angular/core';
+import { Router } from '@angular/router'; // Import Router
+
+import { ToastrService } from 'ngx-toastr'; // Import ToastrService
+
 
 @Component({
   selector: 'app-landing-page',
@@ -6,7 +10,9 @@ import {  Component, ElementRef, ViewChild,Renderer2 } from '@angular/core';
   styleUrls: ['./landing-page.component.css']
 })
 export class LandingPageComponent {
+  constructor(private router: Router,private toastr: ToastrService ) {}
   @ViewChild('imagesContainer') imagesContainer!: ElementRef;
+ 
 
   scrollLeft() {
     if (this.imagesContainer) {
@@ -85,6 +91,18 @@ export class LandingPageComponent {
   ngOnInit(): void {
     console.log('Redirected to Landing page after authentication');
   }
+
+
+  
+  logout() {
+    // Remove JWT token
+    localStorage.removeItem('jwtToken');
+    this.router.navigate(['/login']); // Redirect to /Landing
+    this.toastr.success('logout successful!!');
+
+    // Redirect to login page or do other cleanup
+}
+
 }
 
 

@@ -5,35 +5,47 @@ import {
   FormGroup,
   Validators,
   ReactiveFormsModule,
+  FormsModule,
+  
 } from '@angular/forms';
 import { CommonServiceService } from '../common-service.service';
 import { ToastrService } from 'ngx-toastr'; // Import ToastrService
+import { MsalService } from '@azure/msal-angular';
+import { AuthService } from '../auth.service';
+import { Modal } from 'bootstrap';
+
 
 
 declare var google: any;
 
 @Component({
-  selector: 'app-login',
-  standalone: true,
-  imports: [ReactiveFormsModule],
+  selector: 'app-login',  
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
+  showForgotPassword = false;
+  forgotPasswordForm: FormGroup | any;
+
 
   constructor(
-    private CommonServiceService: CommonServiceService,
+    private AuthService: AuthService,
     private fb: FormBuilder,
     private router: Router,
-    private toastr: ToastrService // Inject the ToastrService
-
-  ) { }
+    private toastr: ToastrService, // Inject the ToastrService
+    private msalService: MsalService // msal
+  ) {}
   ngOnInit(): void {
     this.loginForm = this.fb.group({
       Email: ['', [Validators.required, Validators.email]],
       Password: ['', Validators.required],
     });
+
+    this.forgotPasswordForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]]
+    });
+  
 
     // google authentication
     this.loadGoogleIdentityServices().then(() => {
@@ -43,6 +55,8 @@ export class LoginComponent implements OnInit {
         callback: (response: any) => {
           console.log(response);
           this.handleLoginSuccess(response);
+          this.AuthService.setToken(response.credential); // Store the Google token
+
         },
       });
       google.accounts.id.renderButton(document.getElementById('g_id_signin'), {
@@ -51,7 +65,17 @@ export class LoginComponent implements OnInit {
       });
       google.accounts.id.prompt();
     });
+
+    // Initialize Microsoft authentication
+    this.msalService.instance.handleRedirectPromise().then((res) => {
+      if (res != null && res.account != null) {
+        this.msalService.instance.setActiveAccount(res.account);
+      }
+    });
+
+    
   }
+
   handleLoginSuccess(response: any) {
     // Process login response, then redirect
     console.log('Login successful:', response);
@@ -79,17 +103,17 @@ export class LoginComponent implements OnInit {
 
   onSubmit(): void {
     if (this.loginForm.valid) {
-      this.CommonServiceService.login(this.loginForm.value).subscribe({
+      this.AuthService.login(this.loginForm.value).subscribe({
         next: (response) => {
           console.log(this.loginForm.value);
           console.log('Login successful', response);
-          localStorage.setItem('token', response.token); // Store the token
+          this.AuthService.setToken(response.token); // Store the token
           this.toastr.success('Login successful!!');
           this.router.navigate(['/Landing']); // Redirect to /Landing
           // Handle successful login here
         },
         error: (error) => {
-          this.toastr.error('Login Failed')
+          this.toastr.error('Login Failed');
           console.error('Login failed', error);
           // Handle login failure here
         },
@@ -97,14 +121,62 @@ export class LoginComponent implements OnInit {
     }
   }
 
+  isLoginInProgress = false;
 
-  logout() {
-    // Remove JWT token
-    localStorage.removeItem('jwtToken');
-    this.router.navigate(['/login']); // Redirect to /Landing
+  // Add Microsoft login method
+  loginWithMicrosoft(): void {
+    this.isLoginInProgress = true;
+    this.msalService.loginPopup().subscribe({
+      next: (result) => {
+        console.log(result);
+        this.AuthService.setToken(result.idToken); // Store the Microsoft token
+        this.handleLoginSuccess(result);
+      },
+      error: (error) => {
+        console.error(error);
+        this.isLoginInProgress = false;
+        this.toastr.error('Microsoft login failed');
+      },
+    });
+  }
+  logout(): void {
+    this.AuthService.clearToken(); // Remove the token
+    this.router.navigate(['/login']); // Redirect to login page
+    this.msalService.logout(); // Microsoft logout (optional)
+  }
+  
 
+  closeModal() {
+    const modalElement = document.getElementById('exampleModal');
+    if (modalElement) {
+      const modalInstance = Modal.getInstance(modalElement);
+      if (modalInstance) {
+        modalInstance.hide();
+      } else {
+        new Modal(modalElement).hide();
+      }
+    }
+  }
 
-    // Redirect to login page or do other cleanup
-}
+  //Forgot Paasword
+  onForgotPassword() {
+    if (this.forgotPasswordForm.valid) {
+      const email = this.forgotPasswordForm.get('email').value;
+      this.AuthService.Forgotpassword(email).subscribe(
+        response => {
+          console.log('Password reset link sent', response);
+          this.toastr.success('Password reset link sent to mail !!!');
+          this.closeModal();
+        },
+        error => {
+          console.error('Error sending reset link', error);
+          this.toastr.error('Failed to send password reset link.');
+        }
+      );
+    } else {
+      console.log('Form is invalid');
+    }
+  }
 
+  
 }
